@@ -31,3 +31,9 @@ class Mahasiswa(Orang, Alamat):
 
 mhs = Mahasiswa("Sri", "Rahayu", "2207027", "cipanas", "Garut")
 mhs.printData()
+
+
+
+#Nama : Sri Rahayu
+#NIM : 2207027
+#Alamat: cipanas, Garut
