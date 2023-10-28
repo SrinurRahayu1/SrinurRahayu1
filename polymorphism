@@ -16,7 +16,7 @@ class persegi(BangunRuang):
     def luas(self):
         print(f"Luas Persegi dengan SISI {self.sisi} adalah {self.sisi*self.sisi}")
 
-class lingakran(BangunRuang):
+class lingkaran(BangunRuang):
     def __init__(self, jari_jari):
         super().__init__(0, jari_jari)
 
@@ -24,13 +24,13 @@ class lingakran(BangunRuang):
         print("Aku Adalah Lingkaran")
 
     def luas(self):
-        print(f"Luas Persegi dengan jari-jari {self.jari_jari} adalah {self.jari_jari* self.jari_jari*3.14}")
+        print(f"Luas lingkaran dengan jari-jari {self.jari_jari} adalah {self.jari_jari* self.jari_jari*3.14}")
 
 per = persegi(4)
 per.move()
 per.luas()
 
-ling = lingakran(7)
+ling = lingkaran(7)
 ling.move()
 ling.luas()
 
