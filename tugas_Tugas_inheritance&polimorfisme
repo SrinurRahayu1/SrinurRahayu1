@@ -1,0 +1,59 @@
+class Karyawan:
+    def __init__(self, nama):
+        self.nama = nama
+        self.gaji_pokok = 4000000
+        self.uang_makan = 30000
+
+    def hitung_gaji(self):
+        return self.gaji_pokok + self.uang_makan
+
+
+class Manager(Karyawan):
+    def __init__(self, nama):
+        super().__init__(nama)
+        self.uang_transport = 30
+        self.tunjangan_profesi = 1500000
+
+    def hitung_gaji(self):
+        return super().hitung_gaji() + self.uang_transport + self.tunjangan_profesi
+
+
+class Admin(Karyawan):
+    def __init__(self, nama, jam_lembur=0):
+        super().__init__(nama)
+        self.uang_transport = 15
+        self.jam_lembur = jam_lembur
+        self.uang_lembur_per_jam = 40
+
+    def hitung_gaji(self):
+        gaji = super().hitung_gaji()
+        return gaji + (self.jam_lembur * self.uang_lembur_per_jam)
+
+
+class Marketing(Karyawan):
+    def __init__(self, nama):
+        super().__init__(nama)
+        self.uang_transport = 50
+
+    def hitung_gaji(self):
+        return super().hitung_gaji()
+
+
+def main():
+    manager1 = Manager("Sri (Manajer)")
+    admin1 = Admin("Nur (Admin)", jam_lembur=5)
+    marketing1 = Marketing("Rahayu (Marketing)")
+
+    daftar_karyawan = [manager1, admin1, marketing1]
+
+    print("Daftar Gaji Karyawan:")
+    for karyawan in daftar_karyawan:
+        print(f"{karyawan.nama}: {karyawan.hitung_gaji()}")
+
+if __name__ == "__main__":
+    main()
+
+# Daftar Gaji Karyawan:
+# Sri (Manajer): 5530030
+# Nur (Admin): 4030200
+# Rahayu (Marketing): 4030000
